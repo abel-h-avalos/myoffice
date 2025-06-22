@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Login</title>
+  <script>
+    function handleLogin(event) {
+      event.preventDefault(); // Stop form from submitting
+
+      const username = document.getElementById("Username").value.trim();
+      const password = document.getElementById("Password").value.trim();
+
+      // Hardcoded credentials
+      if (username === "admin" && password === "admin") {
+        window.location.href = "NavBar.html"; // Go to next page
+      } else {
+        alert("Invalid username or password.");
+      document.getElementById("Username").value="";
+      document.getElementById("Password").value="";        
+      }
+    }
+  </script>
+</head>
+<body style="background-image: url('background.jpg'); background-size: cover;">
+  <fieldset style="width:21%; margin: 10px auto; border-radius: 10px; margin-top:150px; background-color:white;">
+    <legend style="text-align:center">
+      <h2 style="font-family:calibri; font-size:30px;">Login Here</h2>
+    </legend>
+    <form onsubmit="handleLogin(event)" style="margin:10px; background-color:white;">
+      <div>
+        <label for="Username">Username:</label>
+        <input type="text" id="Username" placeholder="Enter Username" required maxlength="13" style="width:150px; float:right;" />
+      </div>
+      <br>
+      <div>
+        <label for="Password">Password:</label>
+        <input type="password" id="Password" placeholder="Enter Password" required maxlength="5" style="width:150px; float:right;" />
+      </div>
+      <br>
+      <div>
+        <button type="submit" style="padding:4px; width:100px; float:left; background-color:black; color:white; font-weight:bold; border-radius:10px;">Login</button>
+        <button type="reset" style="padding:4px; width:100px; float:right; background-color:black; color:white; font-weight:bold; border-radius:10px;">Cancel</button>
+      </div>
+    </form>
+  </fieldset>
+</body>
+</html>
